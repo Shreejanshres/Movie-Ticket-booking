@@ -1,0 +1,256 @@
+#imports os for cls and time for sleep
+import os
+import time
+import getpass
+# it is the login page
+def login():
+    global a1,a2,a3,a4
+    a1=a2=a3=a4=0
+    os.system('cls')
+    print("Welcome to the CINEMAS")
+    global uname
+    uname = input("enter username: ")
+    x = getpass.getpass("Enter Password: ")
+    if x == "password":
+        time.sleep(1)
+        main_menu()
+    else:
+        print("wrong password")
+        time.sleep(2)
+        os.system('cls')
+        login()
+#chose between booking a movie or else see the ticket you bought.
+def main_menu():
+    os.system('cls')
+    print("Welcome Back", uname)
+    print("1. Movies \n2. My Tickets \n3.Exit")
+    choice=int(input("Enter 1-3: "))
+    if choice == 1:
+        os.system('cls')
+        buy()
+    elif choice == 2:
+        os.system('cls')
+        tickets()
+    elif choice == 3:
+        os.system('cls')
+        end()
+    else:
+        print('Invalid Selection... Please choose again!')
+        time.set(2)
+        os.system('cls')
+        main_menu()
+#to buy the tickets
+def buy():
+    print("Which movie do you want to see?")
+    print("1.Interstellar \t2.Green Book")
+    print("3.Jhola \t\t4.KGF:Chapter 2")
+    print("\t\t 5.Main Menu ")
+    pick=int(input("Please enter value from 1-5: "))
+    if pick == 1:
+        os.system('cls')
+        movie1()
+    elif pick == 2:
+        os.system('cls')
+        movie2()
+    elif pick == 3:
+        os.system('cls')
+        movie3()
+    elif pick == 4:
+        os.system('cls')
+        movie4()
+    elif pick == 5:
+        os.system('cls')
+        main_menu()
+    else:
+        print("Invalid input")
+        time.sleep(2)
+        os.system('cls')
+        buy()
+#movies 1 to 4
+def movie1():
+    s1=15
+    print('Hi! \nThere are',s1,' seats availale for Interstellar')
+    sure1=input('You sure want to buy ticket for Interstellar? Y/N: ')
+    if sure1 == 'Y' or sure1 == 'y':
+        m1=int(input('How many seat do you want to book?: '))
+        p1=300*m1
+        if m1>=1:
+            if m1<=15:
+                print('Your',m1,'seats has been booked')
+                print('Your total amount is :',p1);
+                global a1
+                a1=m1
+                input("Press enter to continue....")
+                os.system('cls')
+                main_menu()
+            else:
+                print("your choice is larger than available seats \nPlease choose again")
+                time.sleep(1)
+                os.system('cls')
+                movie1()
+        else:
+            print("Invalid choice \nPlease try again")
+            time.sleep(1)
+            os.system('cls')
+            movie1()
+    elif sure1 == "N" or sure1 =="n":
+        time.sleep(1)
+        os.system('cls')
+        buy()
+    else:
+        print('Invalid option')
+        time.sleep(1)
+        os.system('cls')
+        movie1()
+def movie2():
+
+
+    s2 = 20
+    print('Hi! \nThere are', s2, ' seats availale for Green Book')
+    sure2 = input('You sure want to buy ticket for Green Book? Y/N: ')
+    if sure2 == 'Y' or sure2 == 'y':
+        m2 = int(input('How many seat do you want to book?: '))
+        p2 = 300 * m2
+        if m2 >= 1:
+            if m2 <= s2:
+                print('Your', m2, 'seats has been booked')
+                print('Your total amount is :', p2);
+                global a2
+                a2 = m2
+                input("Press enter to continue....")
+                os.system('cls')
+                main_menu()
+            else:
+                print("your choice is larger than available seats \nPlease choose again")
+                time.sleep(1)
+                os.system('cls')
+                movie2()
+        else:
+            print("Invalid choice \nPlease try again")
+            time.sleep(1)
+            os.system('cls')
+            movie2()
+    elif sure2 == "N" or sure2 == "n":
+        time.sleep(1)
+        os.system('cls')
+        buy()
+    else:
+        print('Invalid option')
+        time.sleep(1)
+        os.system('cls')
+        movie2()
+def movie3():
+
+    s3 = 5
+    print('Hi! \nThere are', s3, ' seats availale for Jhola')
+    sure3 = input('You sure want to buy ticket for Jhola? Y/N: ')
+    if sure3 == 'Y' or sure3 == 'y':
+        m3 = int(input('How many seat do you want to book?: '))
+        p3 = 300 * m3
+        if m3 >= 1:
+            if m3 <= 15:
+                print('Your', m3, 'seats has been booked')
+                print('Your total amount is :', p3);
+                global a3
+                a3 = m3
+                input("Press enter to continue.....")
+                os.system('cls')
+                main_menu()
+            else:
+                print("your choice is larger than available seats \nPlease choose again")
+                time.sleep(1)
+                os.system('cls')
+                movie3()
+        else:
+            print("Invalid choice \nPlease try again")
+            time.sleep(1)
+            os.system('cls')
+            movie3()
+    elif sure3 == "N" or sure3 == "n":
+        time.sleep(1)
+        os.system('cls')
+        buy()
+    else:
+        print('Invalid option')
+        time.sleep(1)
+        os.system('cls')
+        movie3()
+def movie4():
+
+    s4 = 10
+    print('Hi! \nThere are', s4, ' seats availale for KGF: Chapter 2')
+    sure4 = input('You sure want to buy ticket for KGF: Chapter 2? Y/N: ')
+    if sure4 == 'Y' or sure4 == 'y':
+        m4 = int(input('How many seat do you want to book?: '))
+        p4 = 300 * m4
+        if m4 >= 1:
+            if m4 <= 15:
+                print('Your', m4, 'seats has been booked')
+                print('Your total amount is :', p4);
+                global a4
+                a4 = m4
+                input("Press enter to continue....")
+                os.system('cls')
+                main_menu()
+            else:
+                print("your choice is larger than available seats \nPlease choose again")
+                time.sleep(1)
+                os.system('cls')
+                movie4()
+        else:
+            print("Invalid choice \nPlease try again")
+            time.sleep(1)
+            os.system('cls')
+            movie4()
+    elif sure4 == "N" or sure4 == "n":
+        time.sleep(1)
+        os.system('cls')
+        buy()
+    else:
+        print('Invalid option')
+        time.sleep(1)
+        os.system('cls')
+        movie4()
+#to display the bought tickets
+def tickets():
+    print('All your bought tickets is here:')
+    print("1.Interstellar \t2.Green Book")
+    print("3.Jhola \t\t4.KGF:Chapter 2")
+    print("\t\t 5.Main Menu ")
+    seeticket = int(input("Please enter value from 1-5: "))
+    if seeticket == 1:
+        print(a1, "tickets bought")
+        input("press enter to proceed....")
+        os.system('cls')
+        tickets()
+    elif seeticket == 2:
+        print(a2,"tickets bought")
+        input("press enter to proceed....")
+        os.system('cls')
+        tickets()
+    elif seeticket == 3:
+        print(a3,"tickets bought")
+        input("press enter to proceed....")
+        os.system('cls')
+        tickets()
+    elif seeticket == 4:
+        print(a4, "tickets bought")
+        input("press enter to proceed....")
+        os.system('cls')
+        tickets()
+    elif seeticket == 5:
+        os.system('cls')
+        time.sleep(1)
+        main_menu()
+    else:
+        print("Invalid input")
+        os.system('cls')
+        time.sleep(1)
+        tickets()
+#outro
+def end():
+    print("thanks for visiting",uname,"!!!!")
+    print("Hope to see you soon")
+    input("Press enter to proceed....")
+
+login()
